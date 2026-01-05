@@ -1,0 +1,153 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Host SteeringController
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ TL : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ SON : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ RES : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PC : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ LSP : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ LSN : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ LOP : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ EMG : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ DO2 : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ DO1 : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ CR : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ encoder : 0|32@1- (1,0) [0|0] "" Vector__XXX
+ SG_ pulse_backward : 0|32@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pulse_forward : 0|32@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ encoder_angle : 0|16@1- (0.03125,0) [-1024|1024] "" Vector__XXX
+ SG_ servo_angle : 0|16@1- (0.03125,0) [-1024|1024] "" Vector__XXX
+ SG_ encoder_angle : 0|16@1- (0.03125,0) [-1024|1024] "" Vector__XXX
+ SG_ fsm_prev_state_id : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BRK_S : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BRK_OVR_flag : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BRK_S_TH_SET : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BRK_S_TH : 0|7@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 265 pos_limit: 8 Host
+ SG_ limit_max : 32|32@1- (1,0) [0|0] ""  SteeringController
+ SG_ limit_min : 0|32@1- (1,0) [0|0] ""  SteeringController
+
+BO_ 264 encoder_state: 8 Vector__XXX
+ SG_ encoder_offset : 0|32@1- (1,0) [0|0] "" Vector__XXX
+
+BO_ 259 diag_enable: 7 Host
+ SG_ lso_flag : 17|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pos_limit_flag : 48|1@1+ (1,0) [0|0] ""  SteeringController
+ SG_ return_pulse_per_10ms : 32|16@1+ (1,0) [0|0] ""  SteeringController
+ SG_ return_flag : 24|1@1+ (1,0) [0|0] ""  SteeringController
+ SG_ reset : 16|1@1+ (1,0) [0|0] ""  SteeringController
+ SG_ encoder_update : 8|1@1+ (1,0) [0|0] ""  SteeringController
+ SG_ diag_enable : 0|1@1+ (1,0) [0|0] ""  SteeringController
+
+BO_ 262 device_state: 8 SteeringController
+ SG_ fsm_state_id : 48|8@1+ (1,0) [0|0] ""  Host
+ SG_ loop_count : 40|8@1+ (1,0) [0|0] ""  Host
+ SG_ rs422_recv_timeout : 32|8@1+ (1,0) [0|0] ""  Host
+ SG_ rs422_recv_count : 24|8@1+ (1,0) [0|0] ""  Host
+ SG_ can_error_count : 16|8@1+ (1,0) [0|0] ""  Host
+ SG_ rs422_error_count : 8|8@1+ (1,0) [0|0] ""  Host
+ SG_ rs422_error_state : 0|8@1+ (1,0) [0|0] ""  Host
+
+BO_ 263 pulse_state: 8 SteeringController
+ SG_ last_backward_pulse : 32|32@1+ (1,0) [0|0] ""  Host
+ SG_ last_forward_pulse : 0|32@1+ (1,0) [0|0] ""  Host
+
+BO_ 258 manual_pulse: 4 Host
+ SG_ pulse : 0|32@1- (1,0) [0|0] ""  SteeringController
+
+BO_ 257 pos_set: 4 Host
+ SG_ target_pos : 0|32@1- (1,0) [0|0] ""  SteeringController
+
+BO_ 256 io_set: 3 Host
+ SG_ TLA : 16|8@1+ (0.0391,0.0633) [0.0633|10.0338] ""  SteeringController
+ SG_ TL : 2|1@1+ (1,0) [0|0] ""  SteeringController
+ SG_ RES : 3|1@1+ (1,0) [0|0] ""  SteeringController
+ SG_ PC : 1|1@1+ (1,0) [0|0] ""  SteeringController
+ SG_ LSP : 6|1@1+ (1,0) [0|0] ""  SteeringController
+ SG_ LSN : 7|1@1+ (1,0) [0|0] ""  SteeringController
+ SG_ LOP : 8|1@1+ (1,0) [0|0] ""  SteeringController
+ SG_ EMG : 5|1@1+ (1,0) [0|0] ""  SteeringController
+ SG_ DO2 : 10|1@1+ (1,0) [0|0] ""  SteeringController
+ SG_ DO1 : 9|1@1+ (1,0) [0|0] ""  SteeringController
+ SG_ CR : 4|1@1+ (1,0) [0|0] ""  SteeringController
+ SG_ SON : 0|1@1+ (1,0) [0|0] ""  SteeringController
+
+BO_ 260 pos_state: 8 SteeringController
+ SG_ servo_abs_pos : 32|32@1- (1,0) [0|0] ""  Host
+ SG_ encoder_pos : 0|32@1- (1,0) [0|0] ""  Host
+
+BO_ 261 dio_state: 5 SteeringController
+ SG_ AI : 24|16@1+ (0.0001,0) [0|5] "V" Vector__XXX
+ SG_ ZSP : 17|1@1+ (1,0) [0|0] ""  Host
+ SG_ TLC : 18|1@1+ (1,0) [0|0] ""  Host
+ SG_ TL : 2|1@1+ (1,0) [0|0] ""  Host
+ SG_ SON : 0|1@1+ (1,0) [0|0] ""  Host
+ SG_ RES : 3|1@1+ (1,0) [0|0] ""  Host
+ SG_ RD : 20|1@1+ (1,0) [0|0] ""  Host
+ SG_ PC : 1|1@1+ (1,0) [0|0] ""  Host
+ SG_ LSP : 6|1@1+ (1,0) [0|0] ""  Host
+ SG_ LSN : 7|1@1+ (1,0) [0|0] ""  Host
+ SG_ LOP : 8|1@1+ (1,0) [0|0] ""  Host
+ SG_ INP : 16|1@1+ (1,0) [0|0] ""  Host
+ SG_ EMG : 5|1@1+ (1,0) [0|0] ""  Host
+ SG_ DO2 : 10|1@1+ (1,0) [0|0] ""  Host
+ SG_ DO1 : 9|1@1+ (1,0) [0|0] ""  Host
+ SG_ CR : 4|1@1+ (1,0) [0|0] ""  Host
+ SG_ ALM : 19|1@1+ (1,0) [0|0] ""  Host
+
+
+
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType";
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 0;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","not_used","not_used","not_used","not_used","Cyclic","not_used","IfActive","NoMsgSendType";
+BA_DEF_ BU_  "NmStationAddress" HEX 0 0;
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_  "NmStationAddress" 0;
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_ "DBName" "steering_controller_v201904";
+
